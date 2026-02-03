@@ -18,10 +18,9 @@ def scrape(url: str):
         driver.get(url)
         while True:
             time.sleep(2)
-            print(f"Page title: {driver.title}")
+            print(f"Checking: {driver.title}")
             try:
                 element = driver.find_element(By.XPATH, '//*[@id="instanceList"]/div/div/div[2]/div/div[1]/div[2]/p')
-                print("Element text:", element.text)
                 spotsLeft(element.text, driver.title)
             except Exception:
                 print("Element not found")
@@ -34,22 +33,19 @@ def scrape(url: str):
 
 
 def spotsLeft(text: str, title: str) -> int:
-    if "No spots left" in text:
-        print("No spots left")
-        return 0
-
-    m = re.search(r"(\d+)\s+spots left", text)
-    if m:
-        spots = int(m.group(1))
-        print(f"{spots} spots left")
+    m = re.search(r"(?:(\d+)|No)\s+spots?\s+left", text, re.IGNORECASE)
+    if not m:
+        print(f"Unrecognized spots text: '{text}'")
+        return -1
+    
+    spots = 0 if m.group(1) is None else int(m.group(1))
+    print(f"{spots} spots left" if spots else "No spots left")
+    if spots > 0:
         notify_discord(title)
-        return spots
-
-    print(f"Unrecognized spots text: '{text}'")
-    return -1
+    return spots
 
 def notify_discord(title: str):
-    # webhook_url = "https://discord.com/api/webhooks/xxxx"
+    webhook_url = "https://discord.com/api/webhooks/1466585583685079060/l5OMi87Bcx00ph3dnONpSBQZiqmqjN8gcECVhaRs08tY0qVyRRn6ih1t3GXg36oHJu92"
     data = {
         "content": f"Tennis class spot available! Sign up now! Title: {title}"
     }
