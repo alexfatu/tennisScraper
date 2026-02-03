@@ -45,7 +45,7 @@ def spotsLeft(text: str, title: str) -> int:
     return spots
 
 def notify_discord(title: str):
-    webhook_url = "https://discord.com/api/webhooks/1466585583685079060/l5OMi87Bcx00ph3dnONpSBQZiqmqjN8gcECVhaRs08tY0qVyRRn6ih1t3GXg36oHJu92"
+    webhook_url = "https://discord.com/api/webhooks/xxxxxx"
     data = {
         "content": f"Tennis class spot available! Sign up now! Title: {title}"
     }
