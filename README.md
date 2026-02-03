@@ -5,7 +5,8 @@ UW tennis scraper
 `pip install` selenium, requests
 
 ### Run 
-`python scraper.py`
+1. Update `BEGINNER`, `INTERMEDIATE` globals with link for specific date you want
+2. `python scraper.py`
 
 (uncomment line 16 if you dont want the sandbox chrome tabs to open)
 
