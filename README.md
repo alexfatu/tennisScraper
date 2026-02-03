@@ -6,7 +6,8 @@ UW tennis scraper
 
 ### Run 
 `python scraper.py`
-uncomment line 16 if you dont want the sandbox chrome tabs to open 
+
+(uncomment line 16 if you dont want the sandbox chrome tabs to open)
 
 ### Notification setup
 update `webhook_url` within `notify_discord()`
