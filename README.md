@@ -14,6 +14,6 @@ update `webhook_url` within `notify_discord()`
   <img width="314" height="74" alt="image" src="https://github.com/user-attachments/assets/71097f90-a532-458f-844b-f9936b4f5086" />
 
 2. Copy webhook url:
-   <img width="1080" height="544" alt="image" src="https://github.com/user-attachments/assets/f9378ee1-7b03-4edf-bfa5-c621db327bbd" />
+  <img width="1080" height="544" alt="image" src="https://github.com/user-attachments/assets/f9378ee1-7b03-4edf-bfa5-c621db327bbd" />
 
 
