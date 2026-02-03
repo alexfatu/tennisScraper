@@ -6,6 +6,7 @@ UW tennis scraper
 
 ### Run 
 `python scraper.py`
+
 _Note: only scrapes the nearest upcoming date_
 
 (uncomment line 16 if you dont want the sandbox chrome tabs to open)
