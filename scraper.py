@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-from twilio.rest import Client
 import time
 from multiprocessing import Process
 import re
